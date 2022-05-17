@@ -52,6 +52,7 @@ class VideosViewController: UICollectionViewController {
     view.backgroundColor = .white
     configureSearchController()
     configureLayout()
+    applySnapshot(animatingDifferences: false)
   }
   
   // 1
@@ -114,7 +115,7 @@ extension VideosViewController {
 extension VideosViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     videoList = filteredVideos(for: searchController.searchBar.text)
-    collectionView.reloadData()
+    applySnapshot()
   }
   
   func filteredVideos(for queryOrNil: String?) -> [Video] {
