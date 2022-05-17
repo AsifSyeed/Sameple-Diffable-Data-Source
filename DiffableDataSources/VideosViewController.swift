@@ -31,14 +31,9 @@ import SafariServices
 
 class VideosViewController: UICollectionViewController {
   // MARK: - Properties
-  private var videoList = Video.allVideos
+  private var sections = Section.allSections
   private var searchController = UISearchController(searchResultsController: nil)
   private lazy var dataSource = makeDataSource()
-  
-  // MARK: - Enum
-  enum Section {
-    case main
-  }
   
   typealias DataSource = UICollectionViewDiffableDataSource<Section, Video>
   typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Video>
@@ -60,9 +55,10 @@ class VideosViewController: UICollectionViewController {
     // 2
     var snapshot = Snapshot()
     // 3
-    snapshot.appendSections([.main])
-    // 4
-    snapshot.appendItems(videoList)
+    snapshot.appendSections(sections)
+    sections.forEach { section in
+      snapshot.appendItems(section.videos, toSection: section)
+    }
     // 5
     dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
   }
