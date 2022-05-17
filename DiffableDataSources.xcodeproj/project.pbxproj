@@ -17,6 +17,7 @@
 		B09EE67723DFEA8C006CEDE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09EE67623DFEA8C006CEDE0 /* Main.storyboard */; };
 		B0F557EC23EF455600314EC5 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F557EB23EF455600314EC5 /* UIView+IBInspectable.swift */; };
 		C31EBE842833BE5000AD590E /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBE832833BE5000AD590E /* Section.swift */; };
+		C31EBE862833C08300AD590E /* SectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBE852833C08300AD590E /* SectionHeaderReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		B0C93C0424118EB80030E396 /* DiffableDataSources.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DiffableDataSources.entitlements; sourceTree = "<group>"; };
 		B0F557EB23EF455600314EC5 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		C31EBE832833BE5000AD590E /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		C31EBE852833C08300AD590E /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				B09EE67223DFE6C2006CEDE0 /* Video.swift */,
 				B0F557EB23EF455600314EC5 /* UIView+IBInspectable.swift */,
 				C31EBE832833BE5000AD590E /* Section.swift */,
+				C31EBE852833C08300AD590E /* SectionHeaderReusableView.swift */,
 			);
 			path = DiffableDataSources;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				C31EBE842833BE5000AD590E /* Section.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,
+				C31EBE862833C08300AD590E /* SectionHeaderReusableView.swift in Sources */,
 				B09EE67323DFE6C2006CEDE0 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
