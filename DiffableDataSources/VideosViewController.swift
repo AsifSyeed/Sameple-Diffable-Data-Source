@@ -110,22 +110,32 @@ extension VideosViewController {
 // MARK: - UISearchResultsUpdating Delegate
 extension VideosViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
-    videoList = filteredVideos(for: searchController.searchBar.text)
+    sections = filteredSections(for: searchController.searchBar.text)
     applySnapshot()
   }
   
-  func filteredVideos(for queryOrNil: String?) -> [Video] {
-    let videos = Video.allVideos
+  func filteredSections(for queryOrNil: String?) -> [Section] {
+    let sections = Section.allSections
+
     guard
       let query = queryOrNil,
       !query.isEmpty
       else {
-        return videos
+        return sections
     }
-    return videos.filter {
-      return $0.title.lowercased().contains(query.lowercased())
+      
+    return sections.filter { section in
+      var matches = section.title.lowercased().contains(query.lowercased())
+      for video in section.videos {
+        if video.title.lowercased().contains(query.lowercased()) {
+          matches = true
+          break
+        }
+      }
+      return matches
     }
   }
+
   
   func configureSearchController() {
     searchController.searchResultsUpdater = self
